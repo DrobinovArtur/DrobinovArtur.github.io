@@ -29,9 +29,9 @@
                         class="pure-button pure-button-primary center__button-add" ng-click="my.addItems(my.itemName)">Add new</button>
             </fieldset>
         </form>
-        <div ng-repeat="item in my.items" class="center__repeat">
+        <div ng-repeat="item in my.items track by $index" class="center__repeat">
         <span ng-click="my.CommentsItems(item)">{{item.name}}</span>
-          <div class="center__item-lenght"   ng-if="item.comments.length">  <span>{{item.comments.length}}</span></div>
+          <div class="center__item-lenght"   ng-if="item.comments.length">  <span ng-click="my.CommentsItems(item)">{{item.comments.length}}</span></div>
             <!--<input type="button" value="delete" ng-click="my.deleteItems(item.id)">-->
             <button type="button" style=" background: white;border: 1px solid rgb(255,44,84); color: rgb(255,44,84); "
                     class="pure-button pure-button-primary center__button-delete" ng-click="my.deleteItems(item.id)">Delete</button>
@@ -41,14 +41,13 @@
 
 
 
-    <div class="main__right">
-        <div class="center__top-text"><p>Comments #2</p></div>
-        <div>
+    <div class="main__right" ng-if="my.currentItem">
+        <div class="center__top-text"><p>Comments #{{my.currentItem.name}}</p></div>
+
             <div class="right__base">
-        <div style="min-height: 80px;" ng-repeat="messages in my.currentItem.comments" class="right__repeat">
+        <div style="min-height: 80px;" ng-repeat="messages in my.currentItem.comments track by $index" class="right__repeat">
            <div class="right__avatar"> <p>{{messages.names}}</p></div>
            <div class="right__comments"> <p>{{messages.message}}</p></div>
-
             <hr>
         </div>
             </div>
@@ -57,7 +56,7 @@
                     class="pure-button pure-button-primary center__button-add right__add-comment" ng-click="my.addComments(my.comment)">Add comment</button>
 
 
-        </div>
+
     </div>
 
 

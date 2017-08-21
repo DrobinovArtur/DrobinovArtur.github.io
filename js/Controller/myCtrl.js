@@ -2,7 +2,7 @@
 app.controller('myCtrl', ["itemsServices", function (itemsServices) {
 
     var vm = this;
-    vm.currentItem = {};
+    // vm.currentItem = {};
 
     function init() {
         debugger
@@ -11,6 +11,7 @@ app.controller('myCtrl', ["itemsServices", function (itemsServices) {
 
     vm.addItems = function (name) {
         itemsServices.addItems(name);
+        vm.itemName=""
     };
 
 
@@ -23,6 +24,7 @@ app.controller('myCtrl', ["itemsServices", function (itemsServices) {
     ;
     vm.addComments = function (comment) {
         itemsServices.addComent(comment, vm.currentItem);
+        vm.comment = "";
     };
 
     init();
