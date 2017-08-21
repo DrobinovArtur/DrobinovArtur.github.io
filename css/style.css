@@ -26,15 +26,20 @@ display: flex;
     font-size: 16px;
     line-height: 40px;
     font-family: Tahoma;
-    color: rgb(86,90,105);
+    background:rgb(255,44,84);
     margin-top:40px;
     padding-left: 20px;
     height: 40px;
     width: 100%;
 }
-.left_first_div:hover,.left__two-div:hover{
+.button__hover{
+    position: absolute;
+    height: 50px;
+    left: -26px;
+    width: 5px;
     background:rgb(255,44,84);
-    color: white;
+    top: -7px;
+    display: none;
 }
 
 
@@ -80,6 +85,9 @@ display: flex;
     font-weight: bold;
     align-items: center;
     border-bottom: 1px solid rgb(222,222,222);
+}
+.center__repeat:hover .button__hover{
+    display: block;
 }
 .center__button-delete{
     position: absolute;

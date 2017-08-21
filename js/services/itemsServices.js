@@ -48,7 +48,7 @@ app.factory("itemsServices",function () {
         },
         items:[
             {
-                name:"First item with custom name",
+                name:"First item ",
                 id: 0,
                 comments:[
                     {

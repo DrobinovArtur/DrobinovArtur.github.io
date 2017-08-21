@@ -33,8 +33,10 @@
         <span ng-click="my.CommentsItems(item)">{{item.name}}</span>
           <div class="center__item-lenght"   ng-if="item.comments.length">  <span ng-click="my.CommentsItems(item)">{{item.comments.length}}</span></div>
             <!--<input type="button" value="delete" ng-click="my.deleteItems(item.id)">-->
+
             <button type="button" style=" background: white;border: 1px solid rgb(255,44,84); color: rgb(255,44,84); "
                     class="pure-button pure-button-primary center__button-delete" ng-click="my.deleteItems(item.id)">Delete</button>
+        <div class="button__hover"></div>
         </div>
     </div>
 
@@ -42,7 +44,7 @@
 
 
     <div class="main__right" ng-if="my.currentItem">
-        <div class="center__top-text"><p>Comments #{{my.currentItem.name}}</p></div>
+        <div class="center__top-text"><p>Comments of {{my.currentItem.name}}</p></div>
 
             <div class="right__base">
         <div style="min-height: 80px;" ng-repeat="messages in my.currentItem.comments track by $index" class="right__repeat">
